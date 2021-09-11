@@ -1,0 +1,55 @@
+﻿.f-outside {
+    width: 600px;
+    height: 50px;
+    margin-top: 5px;
+    border: 1px solid black;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px #A1A1A1;
+    background-color: white;
+}
+
+.f-outside #pro {
+    display: inline-block;
+    width: 550px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.f-title {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.f-text {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.f-outside #time {
+    display: inline-block;
+    margin-left: 430px;
+    margin-right: 12px;
+}
+
+
+    .f-outside #time span {
+        font-size: 15px;
+    }
+
+
+.dBtn{
+    height:30px;
+    width:50px;
+    position:absolute;
+    margin-left:650px;
+    margin-top:-55px;
+}
+
+.cBtn {
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    margin-left: 605px;
+    margin-top: -55px;
+}

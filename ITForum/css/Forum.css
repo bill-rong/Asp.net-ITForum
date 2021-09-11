@@ -1,0 +1,128 @@
+﻿
+body, div {
+    /* 初始化 */
+    margin: 0;
+    padding: 0
+}
+
+
+
+
+
+.f-title {
+    margin-left: 5px;
+    font-size: 35px;
+}
+
+.f-text {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.F-outside #f-time {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+    .F-outside #f-time span {
+        font-size: 25px;
+    }
+
+
+.f-outside {
+    width: 900px;
+    margin-top: 5px;
+    background-color: white;
+    position: relative;
+    box-shadow: 1px -1px 5px 1px #A1A1A1;
+}
+
+.outside {
+    width: 700px;
+    background-color: white;
+}
+
+.page {
+    height: 30px;
+    width: 300px;
+    margin-left: 630px;
+    margin-top: 10px;
+}
+
+.text {
+    width: 880px;
+    height: 120px;
+    margin-top: 5px;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D3D3D3;
+}
+
+.a-name {
+    font-family: "楷体";
+    margin-left: 5px;
+    font-size: 20px;
+    color: #87CEEB;
+}
+
+.a-text {
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: "楷体";
+    color: black;
+}
+
+.a-time {
+    margin-left: 735px;
+    font-size: 15px;
+    color: #7A7A7A;
+}
+
+.input-group-ig {
+    z-index: 999;
+    position: fixed;
+    display: block;
+    bottom: 1px;
+}
+
+    .input-group-ig .input-text {
+        width: 65%;
+        height: 34px;
+        float: left;
+        display: inline-block;
+    }
+
+    .input-group-ig .input-btn {
+        float: left;
+        display: inline-block;
+    }
+
+.outside #q-time {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.t-time {
+    font-size: 15px;
+}
+
+
+/*////////////////////////////////////////////////*/
+
+.c-btn {
+    position: absolute;
+    background-image: url("../image/un-c.png");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    margin-left: 830px;
+    margin-top: 12px;
+    border-style: none;
+    float: right;
+}

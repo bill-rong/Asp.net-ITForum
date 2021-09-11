@@ -1,0 +1,25 @@
+﻿.collection {
+    width: 880px;
+    height: 80px;
+    margin-top: 5px;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D3D3D3;
+}
+
+.c-title {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    font-size: 20px;
+    color: #87CEEB;
+}
+
+
+.c-time {
+    font-size: 15px;
+    color: #7A7A7A;
+}

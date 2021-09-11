@@ -1,0 +1,106 @@
+﻿.new {
+    /*width: 100%;*/
+    height: 350px;
+    /*background: #fff;*/
+}
+
+/*.new header {
+    width: 385px;
+    height: 95px;
+    background: #f7f7f7;
+    border-radius: 48px;
+    margin: 70px auto 0;
+    box-sizing: border-box;
+    padding: 2px 0 0 35px;
+}*/
+
+.new p {
+    margin-top: 10px;
+    text-align: center;
+    margin-right:55px;
+    color: #db0067;
+    font-size:30px;
+}
+
+.new ul {
+    margin: 30px auto 0;
+    width: 960px;
+}
+
+.new ul li {
+    width: 230px;
+    height: 230px;
+    border: 1px solid #ccc;
+    background: url("../image/C.jpg") 50%;
+    float: left;
+    margin-right: 5%;
+    margin-left:7px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.new ul li:nth-child(2) {
+    background-image: url("../image/java.jpg");
+}
+
+.new ul li:nth-child(3) {
+    margin-right: 0;
+    background-image: url("../image/python.jpg");
+}
+
+.new ul li hgroup {
+    position: absolute;
+    left: 0;
+    top: -250px;
+    width: 230px;
+    height: 230px;
+    background: rgba(0,0,0,0.5);
+    transition: all .5s ease-in;
+}
+
+.new ul li:hover hgroup {
+    top: 0;
+}
+
+    .new ul li hgroup h2{
+        font-size: 22px;
+        text-align: center;
+        color: #fff;
+        font-weight: normal;
+        margin-top: 30px;
+    }
+
+
+    .new ul li hgroup h5{
+        color:white;
+    }
+
+
+/*///////////////////////////////////////////////////////////////////////////*/
+
+.upload-file{
+    position:fixed;
+    /*background-color:#fff;*/
+    left:30px;
+    bottom:100px;
+    padding:10px;
+    /*border:1px solid #000;*/
+}
+
+.item-a{
+    width:100%;
+}
+.item-a .item-title{
+
+}
+    .item-a .item-time {
+        display: inline-block;
+        float: right;
+        color: #999aaa;
+        font-family: 'microsoft yahei';
+    }
+    .item-a .item-Describe {
+        color: #999aaa;
+        font-family: 'microsoft yahei';
+    }

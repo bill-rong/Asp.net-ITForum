@@ -1,0 +1,354 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="Shortcut Icon" href="image/IT.png" type="image/x-icon" />
+    <script type="text/javascript" src="Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/master.css" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+ 
+    <form id="form1" runat="server" >
+        <%-- 页眉部分导航栏 --%>
+        <div class="row nav-row" style="margin-left:0;margin-right:0;">
+            <div class="col-xs-12 col-sm-4 col-md-1  nav-col" ><img src="image/logo.jpg" alt="logo" height="50" style="margin-left:10px"/></div>
+            <div class="col-xs-4 col-sm-2 col-md-1 nav-col" > </div>
+            <div class="col-xs-12 col-sm-8 col-md-4  nav-col" >
+                <ul>
+                    <li><asp:HyperLink ID="Home" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/Default.aspx">首页</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="Forum" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/Forum.aspx">论坛</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="Answers" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/Question.aspx">问答</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="Code" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/Code.aspx">资源</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="Collection" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/collection.aspx">收藏</asp:HyperLink></li>
+                </ul>
+            </div>
+                
+            
+            <div class="col-xs-4 col-sm-2 col-md-1 nav-col" > </div>
+                
+            <div class="col-xs-12 col-sm-4 col-md-3 nav-col" > 
+                <div class="search-box">
+                    <asp:TextBox ID="search" runat="server" CssClass="search-input form-control"></asp:TextBox>
+                    <asp:Button ID="enter" runat="server" CssClass="search-enter" OnClick="enter_Click"/>
+                </div>
+                      
+            </div>
+
+            <div class="col-xs-4 col-sm-2 col-md-1 nav-col" >
+                <%--<asp:HyperLink ID="Login" runat="server" CssClass="nav-hyperlink">登录/注册</asp:HyperLink>--%>
+            </div>
+            <div class="col-xs-4 col-sm-2 col-md-1 nav-col" style="background-color:pink">
+                <%--<asp:Button ID="exit" runat="server" Text="退出登录" CssClass="nav-hyperlink" />--%>
+                <asp:HyperLink ID="Backstage" runat="server" CssClass="nav-hyperlink" NavigateUrl="~/Login.aspx">退出登录</asp:HyperLink>
+            </div>
+        </div>
+        
+        <div class="row body-row" style="margin-left:0;margin-right:0;"> 
+            <div class="col-xs-12 col-sm-6 col-md-2" >
+                
+                 <div class="info">
+                    <div class="info-title"><span>个人信息卡片</span></div>
+                    
+                    <asp:DataList ID="dlInfo" runat="server" class="datalist">
+                        <ItemTemplate>
+                            <table cellpadding="0" cellspacing="0" width="266" align="center">
+                                <tr class="first-tr">
+                                    <td class="auto-style3 left-td">账号：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"id") %></span></td>
+                                </tr>
+                                <tr >
+                                    <td class="auto-style3 left-td">昵称：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"name") %></span></td>
+                                </tr>  
+                                <tr >
+                                    <td class="auto-style3 left-td">性别：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"sex") %></span></td>
+                                </tr>
+                                <tr >
+                                    <td class="auto-style3 left-td">联系方式：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"tel") %></span></td>
+                                </tr> 
+                                <tr >
+                                    <td class="auto-style3 left-td">邮箱：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"email") %></span></td>
+                                </tr> 
+                                <tr >
+                                    <td class="auto-style3 left-td">兴趣标签：</td>
+                                    <td><span><%# DataBinder.Eval(Container.DataItem,"tag") %></span></td>
+                                </tr> 
+                            </table>
+                        </ItemTemplate>
+                      
+                    </asp:DataList>
+
+                     <!-- Button trigger modal -->
+                     <Button runat="server" type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target="#updateInfo">修改</Button>
+
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2">
+                <div class="list-group" style="margin-top:10px;">
+                    <a href="#" class="list-group-item active">
+                    友情外链
+                    </a>
+                    <a href="https://bbs.csdn.net/forums/python?spm=1000.2115.3001.5955" class="list-group-item" target="_blank">Python全栈技术社区</a>
+                    <a href="https://bbs.csdn.net/forums/ccc?spm=1000.2115.3001.5955" class="list-group-item" target="_blank">软件工程师能力认证</a>
+                    <a href="https://studentclub.csdn.net/?spm=1000.2115.3001.5955" class="list-group-item" target="_blank">高校俱乐部</a>
+                    <a href="https://bbs.csdn.net/forums/harmonyos?spm=1000.2115.3001.5955" class="list-group-item" target="_blank">HarmonyOS技术社区</a>
+                    <a href="https://v3.bootcss.com/" class="list-group-item" target="_blank">Boostrap v3 中文文档</a>
+                    <a href="https://www.csdn.net/" class="list-group-item" target="_blank">CSDN</a>
+                    <a href="https://github.com/" class="list-group-item" target="_blank">GitHub</a>
+                    <a href="https://gitee.com/" class="list-group-item" target="_blank">Gitee-开源中国码云</a>
+                    <a href="https://www.runoob.com/" class="list-group-item" target="_blank">菜鸟教程</a>
+                    <a href="https://www.cnblogs.com/" class="list-group-item" target="_blank">博客园</a>
+                    <a href="https://www.w3school.com.cn/" class="list-group-item" target="_blank">W3CSchool </a>
+                    <a href="https://developer.android.google.cn/" class="list-group-item" target="_blank">Android 开发者 </a>
+                </div>
+            </div>
+            
+        </div>
+
+         <!-- Modal 模态框 -->
+        <div class="modal fade" runat="server" id="updateInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="width:400px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel" style="text-align:center;">修改个人信息</h4>
+                </div>
+                <div class="modal-body" runat="server">
+                    <%-- 表单部分 --%>
+                    <div class="input-group" runat="server" style="margin-bottom:5px;">
+                        <span class="input-group-addon" id="nicheng" runat="server" style="width:81px;">&nbsp;&nbsp;昵&nbsp;&nbsp;&nbsp;称&nbsp;&nbsp;</span>
+                        <asp:TextBox ID="name" runat="server" CssClass="form-control" style="width:287px;"></asp:TextBox>
+                    </div>
+                    <div class="input-group" runat="server" style="margin-bottom:5px;">
+                        <span class="input-group-addon" id="Span1" runat="server" style="width:81px;">&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;别&nbsp;&nbsp;</span>
+                        <%--<asp:TextBox ID="sex" runat="server" CssClass="form-control" ></asp:TextBox>--%>
+                        <asp:DropDownList ID="ddlSex" runat="server" CssClass="form-control" style="width:287px;">
+                            <asp:ListItem Value="男">男</asp:ListItem>
+                            <asp:ListItem Value="女">女</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="input-group" runat="server" style="margin-bottom:5px;">
+                        <span class="input-group-addon" id="Span2" runat="server">联系方式</span>
+                        <asp:TextBox ID="tel" runat="server" CssClass="form-control" style="width:287px;"></asp:TextBox>
+                    </div>
+                    <div class="input-group" runat="server" style="margin-bottom:5px;">
+                        <span class="input-group-addon" id="Span3" runat="server" style="width:81px;">&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;箱&nbsp;&nbsp;</span>
+                        <asp:TextBox ID="email" runat="server" CssClass="form-control" style="width:287px;"></asp:TextBox>
+                    </div>
+                    <div class="input-group" runat="server" style="margin-bottom:5px;">
+                        <span class="input-group-addon" id="Span4" runat="server">兴趣标签</span>
+                        <asp:TextBox ID="tag" runat="server" CssClass="form-control" style="width:287px;"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="Update" runat="server" Text="修改" class="btn btn-primary"
+                        style="position:relative;margin:0 auto 0;left:50%;transform:translateX(-50%);" OnClick="Update_Click"/>
+                </div>
+            </div>
+            </div>
+        </div>
+
+            <%--下载文件的模态框--%>
+
+        <div class="modal fade" id="showLeaguer" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+	        <div class="modal-dialog">
+		        <div class="modal-content">
+			        <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" 
+						        aria-hidden="true">×
+				        </button>
+				        <h4 class="modal-title" id="myModal">
+					        详情
+				        </h4>
+			        </div>
+			        <div class="modal-body">				    
+                        <iframe id="iframeShow" width="550" height="300" style="border:0px;background-color:white;" scrolling="no"></iframe>
+			        </div>
+			        <div class="modal-footer">
+				        <button type="button" class="btn btn-default" 
+						        data-dismiss="modal">关闭
+				        </button>
+                        <asp:Button ID="download" class="btn btn-primary" runat="server" Text="下载" OnClick="Download_Click" />
+			        </div>
+		        </div>
+	        </div>
+        </div>
+        <script>
+            function SetID(ItemID, itemFileName) {
+                $("#iframeShow").prop("src", "ShowLeaguerInfo.aspx?id=" + ItemID);
+                $("#onFileName").val(itemFileName);
+            }
+            $(function () {
+                $('#showLeaguer').modal({
+                    keyboard: true,
+                    show:false
+            })});
+        </script>
+        <input type="hidden" id="onFileName" name="onFileName" value=""/>
+
+
+    </form>
+    <%-- 页脚部分 --%>
+    <footer class="master-footer">
+        <div class="footer-box">
+            <p style="width:100%;text-align:center;">ITForum</p>
+            <div style="height:18px;">
+                <img src="image/tel.png" width="18" height="18"/>
+                <span><a onclick="aOnclick()">19999118081</a></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="image/email.png" width="18" height="18"/>
+                <span><a onclick="aOnclick()">lbr_jsj@163.com</a></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="image/cs.png" width="18" height="18"/>
+                <span><a onclick="aOnclick()">在线客服</a></span>
+            </div>
+        </div> 
+    </footer>
+    <script>
+        function aOnclick() {
+            alert("暂未开放!");
+        }
+    </script>
+    
+    <script >
+        var a_idx=0;
+        jQuery(document).ready(function($){
+                addTips = function (e) {
+                    var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+                    var i = $("<span />").text(a[a_idx]);
+                    a_idx = (a_idx + 1) % a.length;
+                    var x = e.pageX, y = e.pageY;
+                    i.css({
+                        "z-index": 999999999,
+                        "top": y - 20,
+                        "left": x,
+                        "position": "absolute",
+                        "font-weight": "bold",
+                        "color": "#ff6651"
+                    });
+
+                    $("body").append(i);
+                    i.animate({ "top": y - 180, "opacity": 0 }, 1500, function () { i.remove() })
+                    return false;
+                }
+            //绑定鼠标左键
+            $("body").mouseup(addTips);
+            //绑定鼠标右键
+            //$("body").bind("contextmenu",addTips)
+        });
+    </script>
+    <script>
+        function o(w,v,i){
+          return w.getAttribute(v)||i
+        }
+        function j(i){
+            return document.getElementsByTagName(i)
+        }
+        function l(){
+          var i=j("script"),w=i.length,v=i[w-1];
+          return {l: w,z:o(v,"zIndex",-1),o:o(v,"opacity",1),c:o(v,"color","0,0,0"),n:o(v,"count",99)}
+        }
+        function k(){
+            r = u.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+            n=u.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight
+        }
+        function b(){
+            e.clearRect(0, 0, r, n);
+            var w=[f].concat(t);
+            var x,v,A,B,z,y;
+            t.forEach(function(i){
+            i.x += i.xa,
+            i.y+=i.ya,
+            i.xa*=i.x>r||i.x<0?-1:1,
+            i.ya*=i.y>n||i.y<0?-1:1,
+            e.fillRect(i.x-0.5,i.y-0.5,1,1);
+            for(v=0;v<w.length; v++){
+                x = w[v];
+                if(i!==x&&null!==x.x&&null!==x.y){
+                    B = i.x - x.x,z=i.y-x.y,y=B*B+z*z;
+                    y<x.max&&(x===f&&y>=x.max/2&&(i.x-=0.03*B,i.y-=0.03*z),A=(x.max-y)/x.max,e.beginPath(),e.lineWidth=A/2,e.strokeStyle="rgba("+s.c+","+(A+0.2)+")",e.moveTo(i.x,i.y),e.lineTo(x.x,x.y),e.stroke())
+                }
+            }
+            w.splice(w.indexOf(i),1)
+            }),m(b)
+        }
+        var u=document.createElement("canvas"),s=l(),c="c_n"+s.l,e=u.getContext("2d"),r,n,
+        m=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(i){
+            window.setTimeout(i, 1000 / 45)
+        },
+        a=Math.random,f={x: null,y:null,max:20000};
+        u.className="particle_canvas";
+        var browserName = navigator.userAgent.toLowerCase();
+        if (/msie/i.test(browserName) && !/opera/.test(browserName)) {
+            u.className += ' ie10_gte';
+        };
+        u.id=c;
+        u.style.cssText="position:fixed;top:0;left:0;z-index:"+s.z+";opacity:"+s.o;
+        j("body")[0].appendChild(u);
+        k(),window.onresize=k;
+        window.onmousemove=function(i){
+            i = i || window.event,
+        f.x=i.clientX,
+        f.y=i.clientY
+        },
+        window.onmouseout=function(){
+            f.x = null,
+        f.y=null
+        };
+        for(var t=[],p=0;s.n>p;p++){
+            var h=a()*r,
+            g=a()*n,
+            q=2*a()-1,
+            d=2*a()-1;
+            t.push({x: h,y:g,xa:q,ya:d,max:6000})
+        }
+      setTimeout(function(){b()},100)
+    </script>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+        @keyframes octocat-wave {
+                0 %, 100% {
+                transform: rotate(0)
+            }
+        20%, 60% {
+                transform: rotate(-25deg)
+            }
+        40%, 80% {
+                transform: rotate(10deg)
+            }
+        }
+        @media (max-width:500px) {
+        .github - corner: hover .octo-arm {
+                animation: none
+            }
+        .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+        .auto-style2 {
+            width: 76px;
+        }
+        .auto-style3 {
+            width: 80px;
+        }
+    </style>
+
+</body>
+</html>

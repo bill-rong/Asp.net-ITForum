@@ -1,0 +1,163 @@
+﻿
+body, div {
+    /* 初始化 */
+    margin: 0;
+    padding: 0
+}
+
+
+.row {
+    /*background-color: #ECECEC;*/
+}
+
+
+
+.q-title {
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.q-text {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.t-outside #time {
+   
+    display: inline-block;
+    margin-left: 660px;
+    margin-right:10px;
+}
+
+
+    .t-outside #time span {
+        font-size: 16px;
+    }
+
+/*隐藏文字*/
+.t-outside #pro {
+    display: inline-block;
+    width: 850px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*按钮样式*/
+.page {
+    width:336px;
+    height: 30px;
+    margin-top:10px;
+    margin-bottom:10px;
+    float:right;
+}
+
+.text {
+    width: 880px;
+    height: 120px;
+    margin-top: 5px;
+    position: relative;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #D3D3D3;
+}
+
+.a-name {
+    font-family: "楷体";
+    margin-left: 5px;
+    font-size: 20px;
+    color: #87CEEB;
+}
+
+.a-text {
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: "楷体";
+    color: black;
+}
+
+.a-time {
+    margin-left: 735px;
+    font-size: 15px;
+    color: #7A7A7A;
+}
+
+.input-group-t {
+    z-index: 999;
+    position: fixed;
+    display: block;
+    bottom: 1px;
+}
+
+    .input-group-t .input-text {
+        width: 65%;
+        height: 34px;
+        float: left;
+        display: inline-block;
+        margin-left:70px;
+    }
+
+    .input-group-t .input-btn {
+        float: left;
+        display: inline-block;
+    }
+
+.outside #q-time {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.t-time {
+    font-size: 15px;
+}
+
+
+/*////////////////////////////////////////////////*/
+
+.c-btn {
+    position:absolute;
+    background-image: url("../image/un-c.png");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    margin-left: 830px;
+    margin-top: -100px;
+    border-style: none;
+    float: right;
+}
+
+
+.t-outside {
+    width: 90%;
+    margin-top: 5px;
+    border: 1px solid black;
+    position:relative;
+    box-shadow: 1px 1px 1px 1px #A1A1A1;
+    background-color:none;
+}
+
+.outside {
+    width: 700px;
+    height: 120px;
+    position: relative;
+}
+
+.upload-ques {
+    position: fixed;
+    background-color: #fff;
+    left: 30px;
+    bottom: 80px;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.upload-file {
+    position: fixed;
+    /*background-color:#fff;*/
+    left: 30px;
+    bottom: 100px;
+    padding: 10px;
+    /*border:1px solid #000;*/
+}

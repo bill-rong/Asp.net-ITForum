@@ -1,0 +1,152 @@
+﻿@charset "utf-8";
+/*统一设置*/
+* {
+    margin: 0;
+    padding: 0;
+}
+/*网页背景图片*/
+body {
+    background: url("../image/login/bg.jpg") no-repeat;
+    /*filter:blur(5px);*/
+    background-size: cover;
+}
+/*登陆区主体*/
+#main {
+    width: 350px;
+    height: 600px;
+    background: rgba(0,0,0,0.5);
+    margin: 40px auto;
+    border-top: 8px solid #ffc5d1;
+    position: relative;
+}
+
+/*头像区*/
+#avatar {
+    width: 184px;
+    height: 184px;
+    background: url("../image/login/login_head.jpg") no-repeat;
+    background-size: cover;
+    margin: 50px auto;
+    border-radius: 50%;
+}
+
+/*账号密码区*/
+#account {
+    width: 75%;
+    /*height: 200px;*/
+    /*background: #ffd1e4;*/
+    margin: 0 auto;
+}
+
+    #account .input-box {
+        height: 50px;
+        /*background: #ffbcdd;*/
+    }
+
+        #account .input-box  .input {
+            height: 40px;
+            width: calc(100% - 10px);
+            border: none;
+            outline: none;
+            padding: 0 5px;
+            background: rgba(0,0,0,0.5);
+            color: #ffcae5;
+            font-size: 16px;
+        }
+    #account .input-box3 {
+        width:160px;
+        float:left;
+        margin-right:15px;
+        /*background: #ffbcdd;*/
+    }
+
+    #account .box_image {
+        margin-left: 5px;
+        margin-top: 3px;
+        width: 80px;
+    }
+/*登录按钮*/
+.login-btn {
+    width: 75%;
+    height: 40px;
+    display: block;
+    margin: 30px auto;
+    background: #ffc5d1;
+    border: none;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+}
+    /*按下按钮*/
+    .login-btn:active {
+        position: relative;
+        top: 2px;
+    }
+
+/*登陆区底部*/
+#footer {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+    #footer a {
+        color: #ccc;
+        text-decoration: none;
+        margin-right:20px;
+    }
+
+    #footer a:hover {
+        color: red;
+    }
+
+    /* 管理员登录*/
+@keyframes myfirst {
+    from {
+        
+    }
+
+    to {
+        transform:translateX(160px);
+    }
+}
+@keyframes myfirst_two {
+    from {
+    }
+
+    to {
+        
+    }
+}
+.admin {
+    position: fixed;
+    top: 100px;
+    right: -160px;
+    height: 60px;
+    width: 200px;
+    background-color: red;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    
+}
+.dh {
+    transition: 1s ease;
+    transition-property: transform;
+    transform: translateX(0px);
+}
+    .dh:hover {
+        transform: translateX(-160px);
+        transition:all 1s ease 0s;
+        
+    }
+
+.admin label{
+    line-height:60px;
+    margin-left:55px;
+    font-size:18px;
+}
