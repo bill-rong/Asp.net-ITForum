@@ -40,3 +40,23 @@ Asp.net个人作品，IT技术分享论坛
 ### 标签栏搜索框搜索结果
 搜索内容：asp
 ![image](image/sousuo.JPG)
+
+
+### 管理员登录
+右侧隐藏条打勾
+![image](image/adminLogin.png)
+
+### 论坛文章发布
+![image](image/forumCreate.JPG)
+
+### 论坛文章修改
+![image](image/forumUpdate.JPG)
+
+### 对用户发起的问答进行审核
+![image](image/adoptQuestion.JPG)
+
+### 删除问答
+![image](image/questionDel.JPG)
+
+### 删除资源
+![image](image/fileDel.JPG)
