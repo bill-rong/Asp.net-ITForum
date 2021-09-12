@@ -2,7 +2,7 @@
 Asp.net个人作品，IT技术分享论坛
 
 ### 登录页面
-验证码由代码生成，将结果放到session
+验证码由代码生成，将结果放到Session
 ![image](image/userLogin.JPG)
 
 ### 注册页面
